@@ -14,7 +14,7 @@ set NINJA_VERSION=1.11.1
 
 set ZLIB_VERSION=1.3.1
 set BZIP2_VERSION=1.0.8
-set XZ_VERSION=5.6.1
+set XZ_VERSION=5.4.6
 set ZSTD_VERSION=1.5.5
 set LIBPNG_VERSION=1.6.43
 set LIBJPEGTURBO_VERSION=3.0.2
@@ -174,7 +174,10 @@ rem
 
 call :get "https://github.com/madler/zlib/releases/download/v%ZLIB_VERSION%/zlib-%ZLIB_VERSION%.tar.xz"                                                     || exit /b 1
 call :get "https://sourceware.org/pub/bzip2/bzip2-%BZIP2_VERSION%.tar.gz"                                                                                   || exit /b 1
-call :get "https://github.com/tukaani-project/xz/releases/download/v%XZ_VERSION%/xz-%XZ_VERSION%.tar.xz"                                                    || exit /b 1
+
+::call :get "https://github.com/tukaani-project/xz/releases/download/v%XZ_VERSION%/xz-%XZ_VERSION%.tar.xz"                                                    || exit /b 1
+call :get "https://onboardcloud.dl.sourceforge.net/project/lzmautils/xz-%XZ_VERSION%.tar.gz"                                                                || exit /b 1
+
 call :get "https://github.com/facebook/zstd/releases/download/v%ZSTD_VERSION%/zstd-%ZSTD_VERSION%.tar.gz"                                                   || exit /b 1
 call :get "https://download.sourceforge.net/libpng/libpng-%LIBPNG_VERSION%.tar.xz"                                                                          || exit /b 1
 call :get "https://github.com/libjpeg-turbo/libjpeg-turbo/releases/download/%LIBJPEGTURBO_VERSION%/libjpeg-turbo-%LIBJPEGTURBO_VERSION%.tar.gz"             || exit /b 1
